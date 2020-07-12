@@ -1,0 +1,517 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
+html,
+body {
+    height: 100%;
+    max-height: 100%;
+}
+
+$TransitionEffects: all 0.5s ease;
+$OpenSansFonts: 'Open Sans',
+sans-serif;
+$WhiteColor: #FFFFFF;
+$BlackColor: #000000;
+$FontColor: #4d4d4d;
+$BackgroundColor: #eef2f5;
+$ThemeColor: #4899e4;
+$ThemeHoverColor: #538dce;
+$SmallShadow: 0 .125rem .25rem rgba(0,
+0,
+0,
+.075);
+$RegularShadow: 0 .5rem 1rem rgba(0,
+0,
+0,
+.15);
+$LargerShadow: 0 1rem 3rem rgba(0,
+0,
+0,
+.175);
+@mixin mainButtons {
+    border: solid 1px $ThemeColor;
+    background: $ThemeColor;
+    box-shadow: none;
+    outline: none;
+    height: 40px;
+    padding: 0 20px;
+    color: $WhiteColor;
+    border-radius: 5px;
+    font-size: 15px;
+    transition: $TransitionEffects;
+    text-transform: uppercase;
+    &:focus {
+        box-shadow: none;
+        outline: none;
+    }
+    &:hover {
+        transition: $TransitionEffects;
+        background: $ThemeHoverColor;
+    }
+}
+
+body {
+    font-family: $OpenSansFonts;
+    color: $FontColor;
+    overflow-x: hidden;
+}
+
+
+/**************************
+Login page Style
+****************************/
+
+.login_outer_wrap {
+    width: 100%;
+    height: 100%;
+    background: $BackgroundColor;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    .login_form_section {
+        background: $WhiteColor;
+        padding: 20px;
+        box-shadow: $RegularShadow;
+        width: 100%;
+        max-width: 800px;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        @media(max-width: 767px) {
+            flex-direction: column-reverse;
+            max-width: 90%;
+        }
+        .left_side_form {
+            display: flex;
+            flex: 1;
+            // border: solid 1px red;
+            flex-direction: column;
+            @media(max-width: 767px) {
+                flex: initial;
+                width: 100%;
+            }
+            .logo_section {
+                padding: 0px 0 0 30px;
+                @media(max-width: 767px) {
+                    display: none;
+                }
+                span {
+                    font-size: 23px;
+                    margin: 0 0 30px 0;
+                    display: inline-block;
+                }
+            }
+            form {
+                padding: 0 50px 0 30px;
+                @media(max-width: 767px) {
+                    padding: 50px 0;
+                }
+                .form-group {
+                    position: relative;
+                    margin: 0 0 20px 0;
+                    input {
+                        width: 100%;
+                        height: 40px;
+                        border: solid 1px #cccccc;
+                        &:focus {
+                            border: solid 1px $ThemeColor;
+                            box-shadow: none;
+                            outline: none;
+                        }
+                    }
+                    button {
+                        @include mainButtons();
+                    }
+                }
+            }
+        }
+        .right_side_form {
+            display: flex;
+            flex: 1;
+            position: relative;
+            background: url('../src/assets/images/Login_bg.jpg');
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 450px;
+            align-items: center;
+            @media(max-width: 767px) {
+                padding: 60px 0;
+            }
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                width: 100%;
+                height: 1px;
+                top: 25px;
+                background: $WhiteColor;
+                z-index: 9;
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                width: 100%;
+                height: 1px;
+                bottom: 25px;
+                background: $WhiteColor;
+                z-index: 9;
+            }
+            .right_overlay {
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                background: rgba(26, 130, 225, .8);
+                width: 100%;
+                height: 100%;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    left: 25px;
+                    width: 1px;
+                    height: 100%;
+                    top: 0px;
+                    background: $WhiteColor;
+                    z-index: 9;
+                }
+                &::after {
+                    content: '';
+                    position: absolute;
+                    right: 25px;
+                    width: 1px;
+                    height: 100%;
+                    top: 0px;
+                    background: $WhiteColor;
+                    z-index: 9;
+                }
+            }
+            .right_contents {
+                position: relative;
+                padding: 20px 60px;
+                span {
+                    color: $WhiteColor;
+                    letter-spacing: 5px;
+                    text-transform: uppercase;
+                    font-size: 14px;
+                    margin: 0 0 10px 0;
+                    display: inline-block;
+                }
+                h1 {
+                    font-size: 25px;
+                    color: $WhiteColor;
+                    margin: 0;
+                    font-weight: 600;
+                    line-height: 35px;
+                    position: relative;
+                    padding: 0 0 10px 0;
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        bottom: 0;
+                        width: 120px;
+                        height: 1px;
+                        background: #f1f1f1;
+                    }
+                }
+                p {
+                    color: $WhiteColor;
+                    margin: 15px 0 0 0;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+
+.top_header {
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    background: $WhiteColor;
+    box-shadow: $RegularShadow;
+    width: 100%;
+    height: 60px;
+    .heder_contain {
+        width: 100%;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .logo {
+            a {
+                font-size: 22px;
+                text-transform: uppercase;
+                cursor: pointer;
+            }
+        }
+        .logout_aear {
+            cursor: pointer;
+            a {
+                display: flex;
+                align-items: center;
+                span {
+                    margin: 0 10px 0 0;
+                }
+                svg {
+                    fill: $ThemeColor;
+                    width: 16px;
+                }
+                &:hover {
+                    text-decoration: none;
+                    color: $ThemeColor;
+                }
+            }
+        }
+    }
+}
+
+.search_patients_wrap {
+    position: relative;
+    background: url('../src/assets/images/Login_bg.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    .search_overlay {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, .85);
+        height: 100%;
+        width: 100%;
+    }
+    .search_box {
+        position: relative;
+        width: 100%;
+        max-width: 450px;
+        display: flex;
+        align-items: center;
+        input {
+            width: 100%;
+            height: 42px;
+            border: solid 2px $WhiteColor;
+            border-radius: 5px 0 0 5px;
+            border-right: none;
+            &:focus {
+                border: solid 2px $ThemeColor;
+                box-shadow: none;
+                outline: none;
+                border-right: none;
+            }
+        }
+        button {
+            box-shadow: none;
+            outline: none;
+            border: none;
+            width: 100px;
+            height: 42px;
+            background: $ThemeColor;
+            border-radius: 0 5px 5px 0;
+            svg {
+                width: 25px;
+                fill: $WhiteColor;
+            }
+        }
+    }
+    .example_text {
+        position: relative;
+        width: 100%;
+        max-width: 450px;
+        text-align: left;
+        p {
+            color: $WhiteColor;
+            margin: 0;
+            position: relative;
+            font-size: 14px;
+            margin: 5px 0 0 0;
+        }
+    }
+}
+
+
+/************************
+Patients Details section
+*****************************/
+
+.patient_details_section {
+    padding: 60px 0;
+    background: #f1f1f1;
+    .main-timeline2 {
+        padding-top: 50px;
+        overflow: hidden;
+        position: relative;
+        &::before {
+            content: "";
+            width: 7px;
+            height: 100%;
+            background: #084772;
+            margin: 0 auto;
+            position: absolute;
+            top: 80px;
+            left: 0;
+            right: 0
+        }
+        .timeline {
+            width: 50%;
+            float: left;
+            padding: 20px 60px;
+            border-top: 7px solid #084772;
+            border-right: 7px solid #084772;
+            border-radius: 0 30px 0 0;
+            position: relative;
+            right: -3.5px
+        }
+        .icon {
+            display: block;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            border-radius: 50%;
+            background: #e84c47;
+            border: 1px solid #fff;
+            text-align: center;
+            font-size: 25px;
+            color: #fff;
+            box-shadow: 0 0 0 2px #e84c47;
+            position: absolute;
+            top: -30px;
+            left: 0
+        }
+    }
+    .main-timeline2 .timeline-content {
+        display: block;
+        padding: 30px 10px 10px;
+        border-radius: 20px;
+        background: #e84c47;
+        color: #fff;
+        position: relative
+    }
+    .main-timeline2 .timeline-content:hover {
+        text-decoration: none;
+        color: #fff
+    }
+    .main-timeline2 .timeline-content:after,
+    .main-timeline2 .timeline-content:before {
+        content: "";
+        display: block;
+        width: 10px;
+        height: 50px;
+        border-radius: 10px;
+        background: #e84c47;
+        border: 1px solid #fff;
+        position: absolute;
+        top: -35px;
+        left: 50px
+    }
+    .main-timeline2 .timeline-content:after {
+        left: auto;
+        right: 50px
+    }
+    .main-timeline2 .title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .step_no {
+            font-size: 22px;
+            color: $WhiteColor;
+            margin: 0;
+        }
+        span.data_text {
+            font-size: 14px;
+            color: $WhiteColor;
+        }
+    }
+    .main-timeline2 .description {
+        font-size: 15px;
+        // letter-spacing: 1px;
+        margin: 0 0 5px;
+        padding-bottom: 15px;
+    }
+    .main-timeline2 .timeline:nth-child(2n) {
+        border-right: none;
+        border-left: 7px solid #084772;
+        border-radius: 30px 0 0;
+        right: auto;
+        left: -3.5px
+    }
+    .main-timeline2 .timeline:nth-child(2n) .icon {
+        left: auto;
+        right: 0;
+        box-shadow: 0 0 0 2px #4bd9bf
+    }
+    .main-timeline2 .timeline:nth-child(2) {
+        margin-top: 130px
+    }
+    .main-timeline2 .timeline:nth-child(odd) {
+        margin: -130px 0 30px
+    }
+    .main-timeline2 .timeline:nth-child(even) {
+        margin-bottom: 80px
+    }
+    .main-timeline2 .timeline:first-child,
+    .main-timeline2 .timeline:last-child:nth-child(even) {
+        margin: 0 0 30px
+    }
+    .main-timeline2 .timeline:nth-child(2n) .icon,
+    .main-timeline2 .timeline:nth-child(2n) .timeline-content,
+    .main-timeline2 .timeline:nth-child(2n) .timeline-content:after,
+    .main-timeline2 .timeline:nth-child(2n) .timeline-content:before {
+        background: #4bd9bf
+    }
+    .main-timeline2 .timeline:nth-child(3n) .icon,
+    .main-timeline2 .timeline:nth-child(3n) .timeline-content,
+    .main-timeline2 .timeline:nth-child(3n) .timeline-content:after,
+    .main-timeline2 .timeline:nth-child(3n) .timeline-content:before {
+        background: #ff9e09
+    }
+    .main-timeline2 .timeline:nth-child(3n) .icon {
+        box-shadow: 0 0 0 2px #ff9e09
+    }
+    .main-timeline2 .timeline:nth-child(4n) .icon,
+    .main-timeline2 .timeline:nth-child(4n) .timeline-content,
+    .main-timeline2 .timeline:nth-child(4n) .timeline-content:after,
+    .main-timeline2 .timeline:nth-child(4n) .timeline-content:before {
+        background: #3ebae7
+    }
+    .main-timeline2 .timeline:nth-child(4n) .icon {
+        box-shadow: 0 0 0 2px #3ebae7
+    }
+    @media only screen and (max-width:767px) {
+        .main-timeline2:before {
+            left: 0;
+            right: auto
+        }
+        .main-timeline2 .timeline,
+        .main-timeline2 .timeline:nth-child(even),
+        .main-timeline2 .timeline:nth-child(odd) {
+            width: 100%;
+            float: none;
+            padding: 20px 30px;
+            margin: 0 0 30px;
+            border-right: none;
+            border-left: 7px solid #084772;
+            border-radius: 30px 0 0;
+            right: auto;
+            left: 0
+        }
+        .main-timeline2 .icon {
+            left: auto;
+            right: 0
+        }
+    }
+    @media only screen and (max-width:480px) {
+        .main-timeline2 .title {
+            font-size: 18px
+        }
+    }
+}
