@@ -4,15 +4,78 @@
             <div class="logo_section">
                 <span>LOGO</span>
             </div>
-            <form>
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Email">
+            <form [formGroup]="loginforms" novalidate>
+                <div class="form-group" [ngClass]=" loginforms.get( 'userEmail' ).hasError( 'required' ) && loginforms.get( 'userEmail' ).touched || loginforms.get( 'userEmail' ).hasError( 'pattern' )  ? 'OuterErrorBox' : '' ">
+                    <input type="text" class="form-control" placeholder="Email" formControlName="userEmail">
+                    <div class="textbox_icons">
+                        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+<g>
+	<g>
+		<path d="M485.743,85.333H26.257C11.815,85.333,0,97.148,0,111.589V400.41c0,14.44,11.815,26.257,26.257,26.257h459.487
+			c14.44,0,26.257-11.815,26.257-26.257V111.589C512,97.148,500.185,85.333,485.743,85.333z M475.89,105.024L271.104,258.626
+			c-3.682,2.802-9.334,4.555-15.105,4.529c-5.77,0.026-11.421-1.727-15.104-4.529L36.109,105.024H475.89z M366.5,268.761
+			l111.59,137.847c0.112,0.138,0.249,0.243,0.368,0.368H33.542c0.118-0.131,0.256-0.23,0.368-0.368L145.5,268.761
+			c3.419-4.227,2.771-10.424-1.464-13.851c-4.227-3.419-10.424-2.771-13.844,1.457l-110.5,136.501V117.332l209.394,157.046
+			c7.871,5.862,17.447,8.442,26.912,8.468c9.452-0.02,19.036-2.6,26.912-8.468l209.394-157.046v275.534L381.807,256.367
+			c-3.42-4.227-9.623-4.877-13.844-1.457C363.729,258.329,363.079,264.534,366.5,268.761z"/>
+	</g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+                        </svg>
+                    </div>
+                    <div class="errorMessage">
+                        <p *ngIf="loginforms.get( 'userEmail' ).hasError( 'required' ) && loginforms.get( 'userEmail' ).touched ">Email is required</p>
+                        <p *ngIf="loginforms.get( 'userEmail' ).hasError( 'pattern' ) && loginforms.get( 'userEmail' ).touched ">The email address must contain at least the @ character</p>
+                    </div>
+                </div>
+                <div class="form-group" [ngClass]=" loginforms.get( 'userPassword' ).hasError( 'required' ) && loginforms.get( 'userPassword' ).touched  || loginforms.get( 'userPassword' ).hasError( 'maxlength' ) || loginforms.get( 'userPassword' ).hasError( 'minlength' )  ? 'OuterErrorBox' : '' ">
+                    <input type="password" class="form-control" placeholder="Password" formControlName="userPassword">
+                    <div class="textbox_icons">
+                        <svg id="_x31__x2C_5" enable-background="new 0 0 24 24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m18.75 24h-13.5c-1.24 0-2.25-1.009-2.25-2.25v-10.5c0-1.241 1.01-2.25 2.25-2.25h13.5c1.24 0 2.25 1.009 2.25 2.25v10.5c0 1.241-1.01 2.25-2.25 2.25zm-13.5-13.5c-.413 0-.75.336-.75.75v10.5c0 .414.337.75.75.75h13.5c.413 0 .75-.336.75-.75v-10.5c0-.414-.337-.75-.75-.75z"/><path d="m17.25 10.5c-.414 0-.75-.336-.75-.75v-3.75c0-2.481-2.019-4.5-4.5-4.5s-4.5 2.019-4.5 4.5v3.75c0 .414-.336.75-.75.75s-.75-.336-.75-.75v-3.75c0-3.309 2.691-6 6-6s6 2.691 6 6v3.75c0 .414-.336.75-.75.75z"/><path d="m12 17c-1.103 0-2-.897-2-2s.897-2 2-2 2 .897 2 2-.897 2-2 2zm0-2.5c-.275 0-.5.224-.5.5s.225.5.5.5.5-.224.5-.5-.225-.5-.5-.5z"/><path d="m12 20c-.414 0-.75-.336-.75-.75v-2.75c0-.414.336-.75.75-.75s.75.336.75.75v2.75c0 .414-.336.75-.75.75z"/></svg>
+                    </div>
+                    <div class="errorMessage">
+                        <p *ngIf="loginforms.get( 'userPassword' ).hasError( 'required' ) && loginforms.get( 'userPassword' ).touched ">
+                            Password is required.
+                        </p>
+                        <p *ngIf="loginforms.get( 'userPassword' ).hasError( 'maxlength' ) && loginforms.get( 'userPassword' ).touched ">
+                            Password should be 40 characters or less.
+                        </p>
+                        <p *ngIf="loginforms.get( 'userPassword' ).hasError( 'minlength' ) && loginforms.get( 'userPassword' ).touched ">
+                            Password must be at least 3 characters long.
+                        </p>
+                    </div>
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control" placeholder="Password">
-                </div>
-                <div class="form-group">
-                    <button routerLink="/search-patients">Submit</button>
+                    <button routerLink="/search-patients" (click)="onSubmit()" [disabled]="loginforms.invalid">Submit</button>
                 </div>
             </form>
         </div>
