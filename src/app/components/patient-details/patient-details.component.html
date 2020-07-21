@@ -61,163 +61,104 @@
         </div>
     </div>
 </div> -->
-<div class="patient_details_section">
-    <div class="container">
-        <div class="row">
-            <div class="patient_details_content">
-                <p class="patient_name"><strong>Name: </strong>User name</p>
-                <p class="patient_no"><strong>Phone No: </strong>1234567890</p>
-                <p class="patient_address"><strong>Address: </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<div class="patient_page_sections" *ngFor="let patients of listOfPatients">
+    <div class="patient_details_section">
+        <div class="container">
+            <div class="row">
+                <div class="patient_details_content">
+                    <p class="patient_name"><strong>Name: </strong>{{ patients.patientName }}</p>
+                    <p class="patient_no"><strong>Phone No: </strong>{{ patients.patientMobileNo}}</p>
+                    <p class="patient_address"><strong>Address: </strong>{{ patients.patientAddress }}</p>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<div class="New_time_sections">
-    <div class="container">
-        <div class="timeline">
-            <div class="timeline-month">
-                August, 2018
-                <span>3 Entries</span>
-            </div>
-            <div class="timeline-section">
-                <div class="timeline-date">
-                    21, Tuesday
+    <div class="New_time_sections">
+        <div class="container">
+            <div class="timeline">
+                <div class="timeline-month">
+                    {{ patients.monthYear}}
+                    <!-- <span>3 Entries</span> -->
                 </div>
-                <div class="row">
-                    <div class="col-sm-4">
-                        <div class="timeline-box">
-                            <div class="box-title">
-                                <i class="fa fa-asterisk text-success" aria-hidden="true"></i> Job Created
-                            </div>
-                            <div class="box-content">
-                                <div class="box-item"><strong>Loss Type</strong>: A/C Leak</div>
-                                <div class="box-item"><strong>Loss Territory</strong>: Texas</div>
-                                <div class="box-item"><strong>Start Date</strong>: 08/22/2018</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="timeline-box">
-                            <div class="box-title">
-                                <i class="fa fa-pencil text-info" aria-hidden="true"></i> Job Edited
-                            </div>
-                            <div class="box-content">
-                                <div class="box-item"><strong>Project Manager</strong>: Marlyn</div>
-                                <div class="box-item"><strong>Supervisor</strong>: Carol</div>
+                <div class="timeline-section">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="timeline-box wow bounceInUp">
+                                <div class="box-title">
+                                    <i class="fa fa-user-md" aria-hidden="true"></i> Doctor Details
+                                </div>
+                                <div class="box-content">
+                                    <div class="box-item"><strong>Name: </strong> {{patients.doctorName}} </div>
+                                    <div class="box-item"><strong>Speciality: </strong> {{ patients.doctorSpeciality}}</div>
+                                    <div class="box-item"><strong>Experience: </strong> {{ patients.doctorExperience}}</div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="timeline-section">
-                <div class="timeline-date">
-                    22, Wednesday
-                </div>
-                <div class="row">
-                    <div class="col-sm-4">
-                        <div class="timeline-box">
-                            <div class="box-title">
-                                <i class="fa fa-pencil text-info" aria-hidden="true"></i> Job Edited
-                            </div>
-                            <div class="box-content">
-                                <div class="box-item"><strong>Extraction Type</strong>: Carpet Heavy</div>
-                                <div class="box-item"><strong>Water Category</strong>: 4</div>
-                                <div class="box-item"><strong>No. Of Tech</strong>: 6</div>
-                                <div class="box-item"><strong>Est. Complation</strong>: 09/01/2018</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="timeline-box">
-                            <div class="box-title">
-                                <i class="fa fa-tasks text-primary" aria-hidden="true"></i> New Job To Do
-                            </div>
-                            <div class="box-content">
-                                <div class="box-item"><strong>Employee</strong>: Sam</div>
-                                <div class="box-item"><strong>To Do</strong>: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nisi nulla, viverra quis felis sit amet, lacinia feugiat odio. Aliquam sed orci elementum, volutpat dolor eget, venenatis nunc</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="timeline-box">
-                            <div class="box-title">
-                                <i class="fa fa-tasks text-primary" aria-hidden="true"></i> New Job To Do
-                            </div>
-                            <div class="box-content">
-                                <div class="box-item"><strong>Employee</strong>: Jones</div>
-                                <div class="box-item"><strong>To Do</strong>: Proin sit amet aliquet neque, eget sagittis nunc. Proin convallis lectus quis volutpat pharetra. Donec quis ultrices eros. Ut eget mi faucibus.</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-4">
-                        <div class="timeline-box">
-                            <div class="box-title">
-                                <i class="fa fa-thermometer-half text-warning" aria-hidden="true"></i> Pschrometrics
-                            </div>
-                            <div class="box-content">
-                                <div class="box-item"><strong>Temp.</strong>: 23 <sup>o</sup>C</div>
-                                <div class="box-item"><strong>Rh </strong>: 42</div>
-                                <div class="box-item"><strong>Comments</strong>: Integer nec placerat ipsum. Aliquam id ligula suscipit, ornare dui nec, laoreet tortor.</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-4">
-                        <div class="timeline-box">
-                            <div class="box-title">
-                                <i class="fa fa-building-o text-default" aria-hidden="true"></i> Room Created
-                            </div>
-                            <div class="box-content">
-                                <div class="box-item"><strong>Name</strong>: Kitchen</div>
-                                <div class="box-item"><strong>Floor Level </strong>: 2</div>
-                                <div class="box-item"><strong>Dimensions</strong>: 26 x 11 x 8</div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="timeline-section">
-                <div class="timeline-date">
-                    23, Thursday
-                </div>
-                <div class="row">
-                    <div class="col-sm-4">
-                        <div class="timeline-box">
-                            <div class="box-title">
-                                <i class="fa fa-tasks text-success" aria-hidden="true"></i> Job To Do Completed
-                            </div>
-                            <div class="box-content">
-                                <div class="box-item"><strong>Employee</strong>: Sam</div>
-                                <div class="box-item"><strong>Employee Response</strong>: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nisi nulla, viverra quis felis sit amet, lacinia feugiat odio. Aliquam sed orci elementum, volutpat dolor eget, venenatis
-                                    nunc
+                        <div class="col-md-4">
+                            <div class="timeline-box">
+                                <div class="box-title">
+                                    <i class="fa fa-user-o" aria-hidden="true"></i> Paitents Details
+                                </div>
+                                <div class="box-content">
+                                    <div class="box-item"><strong>Name: </strong> {{patients.patientName}}</div>
+                                    <div class="box-item"><strong>Age: </strong> {{patients.patientAge}}</div>
+                                    <div class="box-item"><strong>Mo.No: </strong> {{patients.patientMobileNo}}</div>
+                                    <!-- <div class="box-item"><strong>Address: </strong> {{patients.patientAddress}}</div> -->
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-4">
-                        <div class="timeline-box">
-                            <div class="box-title">
-                                <i class="fa fa-cogs text-info" aria-hidden="true"></i> Equipment Entry
+                </div>
+
+                <div class="timeline-section">
+                    <div class="timeline-date">
+                        Visited Date {{ patients.visitDate }}
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="timeline-box">
+                                <div class="box-title">
+                                    <i class="fa fa-plus-circle" aria-hidden="true"></i> OPD and IPD Details
+                                </div>
+                                <div class="box-content">
+                                    <div class="box-item"><strong>OPD No: </strong> {{patients.OPDNo}}</div>
+                                    <div class="box-item"><strong>OPD Time: </strong>{{patients.OPDTime}}</div>
+                                    <div class="box-item"><strong>IPD No: </strong>{{patients.IPDNo}}</div>
+                                    <div class="box-item"><strong>IPD Time: </strong>{{patients.IPDTime}}</div>
+                                </div>
                             </div>
-                            <div class="box-content">
-                                <div class="box-item"><strong>ID</strong>: TW-3232</div>
-                                <div class="box-item"><strong>Name</strong>: HEPA 600</div>
-                                <div class="box-item"><strong>Date In</strong>: 08/22/2018</div>
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="timeline-box">
+                                <div class="box-title">
+                                    <i class="fa fa-check" aria-hidden="true"></i> Check Parameter
+                                </div>
+                                <div class="box-content">
+                                    <div class="box-item"><strong>Parameter Name: </strong>{{ patients.parameterName}}</div>
+                                    <div class="box-item"><strong>Parameter Code: </strong>{{ patients.parameterCode}}</div>
+                                    <div class="box-item"><strong>Parameter Values: </strong>{{ patients.parameterValues}}</div>
+                                    <div class="box-item"><strong>Parameter Details: </strong>{{ patients.parameterDetails}}</div>
+                                </div>
                             </div>
                         </div>
                     </div>
-
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <div class="timeline-box">
+                                <div class="box-title">
+                                    <i class="fa fa-thermometer-half" aria-hidden="true"></i> Test Details
+                                </div>
+                                <div class="box-content">
+                                    <div class="box-item"><strong>Test Name</strong>{{patients.testName}}</div>
+                                    <div class="box-item"><strong>Test Result</strong>{{patients.testResult}}</div>
+                                    <div class="box-item"><strong>Test Description</strong>{{patients.testDescription}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
             </div>
-
         </div>
     </div>
 </div>

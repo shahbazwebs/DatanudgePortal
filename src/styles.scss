@@ -121,7 +121,12 @@ Login page Style
                         }
                     }
                     button {
+                        margin: 20px 0 0 0;
                         @include mainButtons();
+                        &:disabled {
+                            background: $FontColor;
+                            border: solid $FontColor 1px;
+                        }
                     }
                     .textbox_icons {
                         position: absolute;
@@ -661,6 +666,7 @@ New Time line style
         border: 1px solid $ThemeColor;
         color: #fff;
         text-shadow: $RegularShadow;
+        font-size: 14px;
     }
     .timeline-section:before {
         content: '';
@@ -692,6 +698,7 @@ New Time line style
         border: 1px solid #d4d4d4;
         transition: all 0.3s ease;
         overflow: hidden;
+        margin: 0 0 20px 0;
     }
     .box-icon {
         position: absolute;
@@ -701,18 +708,21 @@ New Time line style
     .box-title {
         padding: 7px 15px;
         border-bottom: 1px solid #d4d4d4;
+        font-size: 16px;
+        font-weight: bold;
     }
     .box-title i {
         margin-right: 5px;
+        font-size: 20px;
     }
     .box-content {
         padding: 5px 15px;
         background-color: #FFFFFF;
     }
     .box-content strong {
-        color: #666;
-        font-style: italic;
-        margin-right: 5px;
+        font-style: normal;
+        margin-right: 15px;
+        color: #000;
     }
     .box-item {
         margin-bottom: 5px;
