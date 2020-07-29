@@ -61,6 +61,66 @@
         </div>
     </div>
 </div> -->
+<div class="top_filter_section">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="filter_contents">
+                    <ul>
+                        <li>
+                            <div class="search_box_section">
+                                <input type="text" placeholder="Search Patient" class="form-control">
+                                <button><i class="fa fa-search"></i></button>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="visit_type_section">
+                                <select name="" id="">
+                                    <option value="visit type">Visit Type</option>
+                                    <option value="Lab">Lab</option>
+                                    <option value="Clinic Visit">Clinic Visit</option>
+                                </select>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="visit_type_section">
+                                <select name="" id="">
+                                    <option value="visit Details">Visit Details</option>
+                                    <option value="Notes">Notes</option>
+                                    <option value="Medications">Medications</option>
+                                    <option value="Assessments">Assessments</option>
+                                    <option value="Vaccinations">Vaccinations</option>
+                                </select>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="visit_type_section">
+                                <select name="" id="">
+                                    <option value="Facility" >Facility</option>
+                                    <option value="Facility1">Facility 1</option>
+                                    <option value="Facility2">Facility 2</option>
+                                    <option value="Facility3">Facility 3</option>
+                                    <option value="Facility4">Facility 4</option>
+                                </select>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="visit_type_section">
+                                <select name="" id="">
+                                    <option value="Doctor" >Doctor</option>
+                                    <option value="Doctor1">Doctor 1</option>
+                                    <option value="Doctor2">Doctor 2</option>
+                                    <option value="Doctor3">Doctor 3</option>
+                                    <option value="Doctor4">Doctor 4</option>
+                                </select>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="patient_page_sections" *ngFor="let patients of listOfPatients">
     <div class="patient_details_section">
         <div class="container">
@@ -83,28 +143,41 @@
                 </div>
                 <div class="timeline-section">
                     <div class="row">
-                        <div class="col-md-6">
-                            <div class="timeline-box wow bounceInUp">
-                                <div class="box-title">
-                                    <i class="fa fa-user-md" aria-hidden="true"></i> Doctor Details
+                        <div class="col-md-10">
+                            <div class="box_heading cliic_visit_background"><i class="fa fa-plus" aria-hidden="true"></i> Clinic Visit</div>
+                            <div class="report_body">
+                                <div class="report_heading">
+                                    <h2>Clinic Visit: {{patients.clinicSpecialist}}</h2>
+                                    <span><i class="fa fa-user-md" aria-hidden="true"></i> {{patients.clinicDoctorName}}</span> <span><i class="fa fa-map-marker" aria-hidden="true"></i> {{patients.clinicSpecialistArea}}</span>
                                 </div>
-                                <div class="box-content">
-                                    <div class="box-item"><strong>Name: </strong> {{patients.doctorName}} </div>
-                                    <div class="box-item"><strong>Speciality: </strong> {{ patients.doctorSpeciality}}</div>
-                                    <div class="box-item"><strong>Experience: </strong> {{ patients.doctorExperience}}</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="timeline-box">
-                                <div class="box-title">
-                                    <i class="fa fa-user-o" aria-hidden="true"></i> Paitents Details
-                                </div>
-                                <div class="box-content">
-                                    <div class="box-item"><strong>Name: </strong> {{patients.patientName}}</div>
-                                    <div class="box-item"><strong>Age: </strong> {{patients.patientAge}}</div>
-                                    <div class="box-item"><strong>Mo.No: </strong> {{patients.patientMobileNo}}</div>
-                                    <!-- <div class="box-item"><strong>Address: </strong> {{patients.patientAddress}}</div> -->
+                                <div class="report_body_contents">
+                                    <div class="body_sections">
+                                        <h3>{{patients.followUpText}}</h3>
+                                        <p>{{patients.followUpDuration}}</p>
+                                    </div>
+
+                                    <div class="body_sections">
+                                        <h3>{{patients.noteAssessments}}</h3>
+                                        <ol>
+                                            <li>{{patients.assessmentsNo1}}</li>
+                                            <li>{{patients.assessmentsNo2}}</li>
+                                            <li>{{patients.assessmentsNo3}}</li>
+                                            <li>{{patients.assessmentsNo4}}</li>
+                                        </ol>
+                                        <p>{{patients.assessmentsDescriptions}}</p>
+                                    </div>
+
+                                    <div class="body_sections">
+                                        <h3>{{patients.reasonAppointment}}</h3>
+                                        <p>{{patients.reasonAppointmentNo1}}</p>
+                                    </div>
+
+                                    <div class="body_sections">
+                                        <h3>{{patients.Treatment}}</h3>
+                                        <p>{{patients.TreatmentPointNo1}}</p>
+                                        <p>{{patients.TreatmentNotes}}</p>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -112,47 +185,37 @@
                 </div>
 
                 <div class="timeline-section">
-                    <div class="timeline-date">
+                    <!-- <div class="timeline-date">
                         Visited Date {{ patients.visitDate }}
-                    </div>
+                    </div> -->
                     <div class="row">
-                        <div class="col-sm-4">
-                            <div class="timeline-box">
-                                <div class="box-title">
-                                    <i class="fa fa-plus-circle" aria-hidden="true"></i> OPD and IPD Details
+                        <div class="col-md-10">
+                            <div class="box_heading"><i class="fa fa-picture-o" aria-hidden="true"></i> IMAGING</div>
+                            <div class="report_body">
+                                <div class="report_heading">
+                                    <h2>{{patients.testName}}</h2>
+                                    <span><i class="fa fa-user-md" aria-hidden="true"></i> {{patients.testedDoctorName}}</span> <span><i class="fa fa-map-marker" aria-hidden="true"></i> {{patients.testLocation}}</span>
                                 </div>
-                                <div class="box-content">
-                                    <div class="box-item"><strong>OPD No: </strong> {{patients.OPDNo}}</div>
-                                    <div class="box-item"><strong>OPD Time: </strong>{{patients.OPDTime}}</div>
-                                    <div class="box-item"><strong>IPD No: </strong>{{patients.IPDNo}}</div>
-                                    <div class="box-item"><strong>IPD Time: </strong>{{patients.IPDTime}}</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-8">
-                            <div class="timeline-box">
-                                <div class="box-title">
-                                    <i class="fa fa-check" aria-hidden="true"></i> Check Parameter
-                                </div>
-                                <div class="box-content">
-                                    <div class="box-item"><strong>Parameter Name: </strong>{{ patients.parameterName}}</div>
-                                    <div class="box-item"><strong>Parameter Code: </strong>{{ patients.parameterCode}}</div>
-                                    <div class="box-item"><strong>Parameter Values: </strong>{{ patients.parameterValues}}</div>
-                                    <div class="box-item"><strong>Parameter Details: </strong>{{ patients.parameterDetails}}</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-8">
-                            <div class="timeline-box">
-                                <div class="box-title">
-                                    <i class="fa fa-thermometer-half" aria-hidden="true"></i> Test Details
-                                </div>
-                                <div class="box-content">
-                                    <div class="box-item"><strong>Test Name</strong>{{patients.testName}}</div>
-                                    <div class="box-item"><strong>Test Result</strong>{{patients.testResult}}</div>
-                                    <div class="box-item"><strong>Test Description</strong>{{patients.testDescription}}</div>
+
+                                <div class="report_body_contents">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-lg-9">
+                                                <h3>{{patients.impression}}</h3>
+                                                <p>{{patients.testDescriptions}}</p>
+                                                <h3>{{patients.indication}}</h3>
+                                                <p>{{patients.indicationDescription}}</p>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <div class="img_section text-center">
+                                                    <a href="../../../assets/images/MRI_brain.jpg" target="_blank">
+                                                        <img src="../../../assets/images/MRI_brain.jpg" alt="">
+                                                    </a>
+                                                    <a href="../../../assets/images/MRI_brain.jpg" target="_blank" class="view_img_text">View Image</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -161,4 +224,3 @@
             </div>
         </div>
     </div>
-</div>

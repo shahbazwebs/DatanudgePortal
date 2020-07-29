@@ -575,7 +575,8 @@ New Time line style
     position: relative;
     background: #f1f1f1;
     padding: 20px;
-    margin: 60px 0 0 0;
+    margin: 0;
+    border-top: solid 1px $WhiteColor;
     .patient_details_content {
         text-align: center;
         width: 100%;
@@ -604,24 +605,30 @@ New Time line style
         content: '';
         width: 4px;
         height: calc(100% + 50px);
-        background: rgb(138, 145, 150);
-        background: -moz-linear-gradient(left, rgba(138, 145, 150, 1) 0%, rgba(122, 130, 136, 1) 60%, rgba(98, 105, 109, 1) 100%);
-        background: -webkit-linear-gradient(left, rgba(138, 145, 150, 1) 0%, rgba(122, 130, 136, 1) 60%, rgba(98, 105, 109, 1) 100%);
-        background: linear-gradient(to right, rgba(138, 145, 150, 1) 0%, rgba(122, 130, 136, 1) 60%, rgba(98, 105, 109, 1) 100%);
+        background: #f1f1f1;
+        // background: -moz-linear-gradient(left, rgba(138, 145, 150, 1) 0%, rgba(122, 130, 136, 1) 60%, rgba(98, 105, 109, 1) 100%);
+        // background: -webkit-linear-gradient(left, rgba(138, 145, 150, 1) 0%, rgba(122, 130, 136, 1) 60%, rgba(98, 105, 109, 1) 100%);
+        // background: linear-gradient(to right, rgba(138, 145, 150, 1) 0%, rgba(122, 130, 136, 1) 60%, rgba(98, 105, 109, 1) 100%);
         left: 14px;
         top: 5px;
         border-radius: 4px;
     }
     .timeline-month {
         position: relative;
-        padding: 4px 15px 4px 35px;
-        background-color: #cccccc;
+        padding: 0;
+        background-color: #f1f1f1;
         display: inline-block;
         width: auto;
         border-radius: 40px;
-        border: 1px solid #cccccc;
-        border-right-color: #cccccc;
+        border: 1px solid #f1f1f1;
+        border-right-color: #f1f1f1;
         margin-bottom: 30px;
+        width: 50px;
+        height: 50px;
+        margin: 0 0px 30px -8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .timeline-month span {
         position: absolute;
@@ -649,6 +656,7 @@ New Time line style
         border-radius: 100%;
         border: 1px solid #17191B;
         left: 5px;
+        display: none;
     }
     .timeline-section {
         padding-left: 35px;
@@ -673,8 +681,8 @@ New Time line style
         position: absolute;
         width: 30px;
         height: 1px;
-        background-color: #444950;
-        top: 12px;
+        background-color: #f1f1f1;
+        top: 16px;
         left: 20px;
     }
     .timeline-section:after {
@@ -682,10 +690,11 @@ New Time line style
         position: absolute;
         width: 10px;
         height: 10px;
-        background: linear-gradient(to bottom, rgba(138, 145, 150, 1) 0%, rgba(122, 130, 136, 1) 60%, rgba(112, 120, 125, 1) 100%);
-        top: 7px;
+        background: #f1f1f1;
+        // background: linear-gradient(to bottom, rgba(138, 145, 150, 1) 0%, rgba(122, 130, 136, 1) 60%, rgba(112, 120, 125, 1) 100%);
+        top: 12px;
         left: 11px;
-        border: 1px solid #17191B;
+        border: 1px solid #f1f1f1;
         border-radius: 100%;
     }
     .timeline-section .col-sm-4 {
@@ -726,5 +735,150 @@ New Time line style
     }
     .box-item {
         margin-bottom: 5px;
+    }
+    .box_heading {
+        width: auto;
+        padding: 7px 20px;
+        background: #049ee0;
+        border-radius: 5px 5px 0 0;
+        display: inline-block;
+        color: #FFF;
+        font-weight: 600;
+        font-size: 17px;
+    }
+    .box_heading.cliic_visit_background {
+        background: #11b066;
+    }
+    .report_body {
+        border: solid 1px #f1f1f1;
+        padding: 15px;
+        border-radius: 0 5px 5px 5px;
+        box-shadow: $RegularShadow;
+        .report_heading {
+            border-bottom: solid 1px #f1f1f1;
+            margin: 0 0 10px 0;
+            padding: 0 0 10px 0;
+            h2 {
+                font-size: 20px;
+                font-weight: 600;
+                color: #000000;
+                margin: 0 0 10px 0;
+            }
+            span {
+                margin: 0 20px 0 0;
+                font-size: 14px;
+                color: #b1b1b1;
+            }
+        }
+        .report_body_contents {
+            h3 {
+                font-size: 18px;
+                font-weight: 600;
+                margin: 0 0 10px 0;
+                color: #000;
+            }
+            p {
+                font-size: 14px;
+                color: $FontColor;
+            }
+            .body_sections {
+                margin: 0 0 25px 0;
+                padding: 10px 10px;
+                p {
+                    margin: 0;
+                }
+            }
+        }
+    }
+}
+
+.img_section {
+    a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        img {
+            width: 100%;
+            max-width: 300px;
+            height: 100%;
+        }
+    }
+    a.view_img_text {
+        text-align: center;
+        color: $FontColor;
+        display: block;
+        margin: 10px 0 10px 0;
+        text-decoration: none;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+.top_filter_section {
+    background: #f1f1f1;
+    padding: 90px 0 30px 0;
+    .filter_contents {
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            li {
+                margin: 0 10px 10px 0;
+                .search_box_section {
+                    width: 100%;
+                    min-width: 270px;
+                    display: flex;
+                    align-items: center;
+                    input {
+                        height: 40px;
+                        border: solid 1px #d4d4d4;
+                        border-radius: 5px 0 0 5px;
+                        &:focus {
+                            box-shadow: none;
+                            outline: none;
+                            border: solid 1px $ThemeColor;
+                        }
+                    }
+                    button {
+                        border: solid 1px transparent;
+                        background: $ThemeColor;
+                        border-radius: 0 5px 5px 0;
+                        padding: 0 15px;
+                        height: 40px;
+                        color: $WhiteColor;
+                        font-size: 16px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        &:focus {
+                            box-shadow: none;
+                            outline: none;
+                        }
+                    }
+                }
+                .visit_type_section {
+                    width: 100%;
+                    min-width: 190px;
+                    select {
+                        background: transparent;
+                        color: $FontColor;
+                        min-width: 150px;
+                        height: 40px;
+                        width: 100%;
+                        border-radius: 5px;
+                        border: solid 1px #CCC;
+                        padding: 0 10px;
+                        &:focus {
+                            box-shadow: none;
+                            outline: none;
+                            border: solid 1px $ThemeColor;
+                        }
+                    }
+                }
+            }
+        }
     }
 }

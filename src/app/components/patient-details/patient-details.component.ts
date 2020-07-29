@@ -1,7 +1,7 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { HttpErrorResponse } from '@angular/common/http';
-import { WOW } from 'wowjs/dist/wow.min';
+// import { WOW } from 'wowjs/dist/wow.min';
 import * as $ from 'jquery';
 
 
@@ -34,7 +34,7 @@ export class PatientDetailsComponent implements OnInit, AfterViewInit {
     );
   }
   ngAfterViewInit(){
-    new WOW().init();
+    // new WOW().init();
   }
 
 }
