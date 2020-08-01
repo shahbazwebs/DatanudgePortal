@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap");
 html,
 body {
     height: 100%;
@@ -6,26 +6,26 @@ body {
 }
 
 $TransitionEffects: all 0.5s ease;
-$OpenSansFonts: 'Open Sans',
+$OpenSansFonts: "Open Sans",
 sans-serif;
-$WhiteColor: #FFFFFF;
+$WhiteColor: #ffffff;
 $BlackColor: #000000;
 $FontColor: #4d4d4d;
 $BackgroundColor: #eef2f5;
 $ThemeColor: #4899e4;
 $ThemeHoverColor: #538dce;
-$SmallShadow: 0 .125rem .25rem rgba(0,
+$SmallShadow: 0 0.125rem 0.25rem rgba(0,
 0,
 0,
-.075);
-$RegularShadow: 0 .5rem 1rem rgba(0,
+0.075);
+$RegularShadow: 0 0.5rem 1rem rgba(0,
 0,
 0,
-.15);
+0.15);
 $LargerShadow: 0 1rem 3rem rgba(0,
 0,
 0,
-.175);
+0.175);
 @mixin mainButtons {
     border: solid 1px $ThemeColor;
     background: $ThemeColor;
@@ -77,7 +77,7 @@ Login page Style
         border-radius: 5px;
         display: flex;
         align-items: center;
-        @media(max-width: 767px) {
+        @media (max-width: 767px) {
             flex-direction: column-reverse;
             max-width: 90%;
         }
@@ -86,13 +86,13 @@ Login page Style
             flex: 1;
             // border: solid 1px red;
             flex-direction: column;
-            @media(max-width: 767px) {
+            @media (max-width: 767px) {
                 flex: initial;
                 width: 100%;
             }
             .logo_section {
                 padding: 0px 0 0 30px;
-                @media(max-width: 767px) {
+                @media (max-width: 767px) {
                     display: none;
                 }
                 span {
@@ -103,7 +103,7 @@ Login page Style
             }
             form {
                 padding: 0 50px 0 30px;
-                @media(max-width: 767px) {
+                @media (max-width: 767px) {
                     padding: 50px 0;
                 }
                 .form-group {
@@ -180,17 +180,17 @@ Login page Style
             display: flex;
             flex: 1;
             position: relative;
-            background: url('../src/assets/images/Login_bg.jpg');
+            background: url("../src/assets/images/Login_bg.jpg");
             background-size: cover;
             background-position: center;
             width: 100%;
             height: 450px;
             align-items: center;
-            @media(max-width: 767px) {
+            @media (max-width: 767px) {
                 padding: 60px 0;
             }
             &::before {
-                content: '';
+                content: "";
                 position: absolute;
                 left: 0;
                 width: 100%;
@@ -200,7 +200,7 @@ Login page Style
                 z-index: 9;
             }
             &::after {
-                content: '';
+                content: "";
                 position: absolute;
                 left: 0;
                 width: 100%;
@@ -215,11 +215,11 @@ Login page Style
                 right: 0;
                 top: 0;
                 bottom: 0;
-                background: rgba(26, 130, 225, .8);
+                background: rgba(26, 130, 225, 0.8);
                 width: 100%;
                 height: 100%;
                 &::before {
-                    content: '';
+                    content: "";
                     position: absolute;
                     left: 25px;
                     width: 1px;
@@ -229,7 +229,7 @@ Login page Style
                     z-index: 9;
                 }
                 &::after {
-                    content: '';
+                    content: "";
                     position: absolute;
                     right: 25px;
                     width: 1px;
@@ -259,7 +259,7 @@ Login page Style
                     position: relative;
                     padding: 0 0 10px 0;
                     &::after {
-                        content: '';
+                        content: "";
                         position: absolute;
                         left: 0;
                         bottom: 0;
@@ -299,21 +299,66 @@ Login page Style
                 cursor: pointer;
             }
         }
-        .logout_aear {
-            cursor: pointer;
-            a {
-                display: flex;
-                align-items: center;
-                span {
-                    margin: 0 10px 0 0;
+        .header_right_section {
+            display: flex;
+            align-items: center;
+            .logout_aear {
+                cursor: pointer;
+                a {
+                    display: flex;
+                    align-items: center;
+                    color: $FontColor;
+                    span {
+                        margin: 0 10px 0 0;
+                    }
+                    svg {
+                        fill: $ThemeColor;
+                        width: 16px;
+                    }
+                    &:hover {
+                        text-decoration: none;
+                        color: $ThemeColor;
+                    }
                 }
-                svg {
-                    fill: $ThemeColor;
-                    width: 16px;
-                }
-                &:hover {
-                    text-decoration: none;
-                    color: $ThemeColor;
+            }
+            .dropdown.notification_section {
+                position: relative;
+                margin: 0 15px 0 0;
+                button {
+                    border: none;
+                    background: transparent;
+                    &::after {
+                        display: none;
+                    }
+                    &:focus {
+                        box-shadow: none;
+                        outline: none;
+                    }
+                    i {
+                        font-size: 23px;
+                        color: $FontColor;
+                    }
+                    span {
+                        position: absolute;
+                        top: -5px;
+                        left: auto;
+                        right: -3px;
+                        width: 18px;
+                        height: 18px;
+                        background: #f97878;
+                        border-radius: 50%;
+                        color: #fff;
+                        font-size: 12px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        animation-name: changelogfy-badge-shake;
+                        animation-duration: 2s;
+                        animation-timing-function: cubic-bezier(0.15, 0.03, 0.06, 0.39);
+                        animation-iteration-count: infinite;
+                        animation-fill-mode: forwards;
+                        transition: all 0.3s;
+                    }
                 }
             }
         }
@@ -322,7 +367,7 @@ Login page Style
 
 .search_patients_wrap {
     position: relative;
-    background: url('../src/assets/images/Login_bg.jpg');
+    background: url("../src/assets/images/Login_bg.jpg");
     background-size: cover;
     background-position: center;
     width: 100%;
@@ -337,7 +382,7 @@ Login page Style
         right: 0;
         top: 0;
         bottom: 0;
-        background: rgba(0, 0, 0, .85);
+        background: rgba(0, 0, 0, 0.85);
         height: 100%;
         width: 100%;
     }
@@ -578,16 +623,16 @@ New Time line style
     margin: 0;
     border-top: solid 1px $WhiteColor;
     .patient_details_content {
-        text-align: center;
+        text-align: left;
         width: 100%;
         p {
             margin: 0 0 10px 0;
         }
         .patient_name {
-            font-size: 20px;
+            font-size: 16px;
         }
         .patient_no {
-            font-size: 18px;
+            font-size: 16px;
         }
         .patient_address {
             font-size: 16px;
@@ -602,7 +647,7 @@ New Time line style
     }
     .timeline:before {
         position: absolute;
-        content: '';
+        content: "";
         width: 4px;
         height: calc(100% + 50px);
         background: #f1f1f1;
@@ -646,15 +691,15 @@ New Time line style
     }
     .timeline-month:before {
         position: absolute;
-        content: '';
+        content: "";
         width: 20px;
         height: 20px;
         background: rgb(138, 145, 150);
-        background: -moz-linear-gradient(top, rgba(138, 145, 150, 1) 0%, rgba(122, 130, 136, 1) 60%, rgba(112, 120, 125, 1) 100%);
-        background: -webkit-linear-gradient(top, rgba(138, 145, 150, 1) 0%, rgba(122, 130, 136, 1) 60%, rgba(112, 120, 125, 1) 100%);
-        background: linear-gradient(to bottom, rgba(138, 145, 150, 1) 0%, rgba(122, 130, 136, 1) 60%, rgba(112, 120, 125, 1) 100%);
+        background: -moz-linear-gradient( top, rgba(138, 145, 150, 1) 0%, rgba(122, 130, 136, 1) 60%, rgba(112, 120, 125, 1) 100%);
+        background: -webkit-linear-gradient( top, rgba(138, 145, 150, 1) 0%, rgba(122, 130, 136, 1) 60%, rgba(112, 120, 125, 1) 100%);
+        background: linear-gradient( to bottom, rgba(138, 145, 150, 1) 0%, rgba(122, 130, 136, 1) 60%, rgba(112, 120, 125, 1) 100%);
         border-radius: 100%;
-        border: 1px solid #17191B;
+        border: 1px solid #17191b;
         left: 5px;
         display: none;
     }
@@ -677,7 +722,7 @@ New Time line style
         font-size: 14px;
     }
     .timeline-section:before {
-        content: '';
+        content: "";
         position: absolute;
         width: 30px;
         height: 1px;
@@ -686,7 +731,7 @@ New Time line style
         left: 20px;
     }
     .timeline-section:after {
-        content: '';
+        content: "";
         position: absolute;
         width: 10px;
         height: 10px;
@@ -726,7 +771,7 @@ New Time line style
     }
     .box-content {
         padding: 5px 15px;
-        background-color: #FFFFFF;
+        background-color: #ffffff;
     }
     .box-content strong {
         font-style: normal;
@@ -742,9 +787,10 @@ New Time line style
         background: #049ee0;
         border-radius: 5px 5px 0 0;
         display: inline-block;
-        color: #FFF;
+        color: #fff;
         font-weight: 600;
         font-size: 17px;
+        text-transform: uppercase;
     }
     .box_heading.cliic_visit_background {
         background: #11b066;
@@ -869,7 +915,7 @@ New Time line style
                         height: 40px;
                         width: 100%;
                         border-radius: 5px;
-                        border: solid 1px #CCC;
+                        border: solid 1px #ccc;
                         padding: 0 10px;
                         &:focus {
                             box-shadow: none;
@@ -881,4 +927,36 @@ New Time line style
             }
         }
     }
+}
+
+@keyframes changelogfy-badge-shake {
+    4%,
+    36% {
+        transform: translateX(-1px);
+    }
+    8%,
+    32% {
+        transform: translateX(1px);
+    }
+    12%,
+    20%,
+    28% {
+        transform: translateX(-2px);
+    }
+    18%,
+    26% {
+        transform: translateX(2px);
+    }
+    36%,
+    100% {
+        transform: translateX(-1px);
+    }
+}
+
+.box_heading.labs_background {
+    background: #e1a200;
+}
+
+.box_heading.procedure_background {
+    background: #005280;
 }

@@ -28,5 +28,18 @@
     "reasonAppointmentNo1": "1. MS",
     "Treatment": "Treatment",
     "TreatmentPointNo1": "1. Multiple sclerosis",
-    "TreatmentNotes": "Notes: Follow-up in 6 months."
+    "TreatmentNotes": "Notes: Follow-up in 6 months.",
+    "Labs": "Labs",
+    "LbasName": "LabCorp",
+    "LabsInformationsHeading": "Labs Informations",
+    "LabsInformations": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries",
+    "procedure": "procedure",
+    "procedureName": "ECG",
+    "QRSTestName": "QRS-T Morphology Evaluation",
+    "QRSTestResult": "Normal",
+    "OverallAssessmentOfECG": "Overall assessment of ECG",
+    "OverallAssessmentOfECGResult": "Normal ECG",
+    "Diagnosis": "Diagnosis",
+    "DiagnosisResult": "Presumed gender for this analysis: Male"
+
 }]

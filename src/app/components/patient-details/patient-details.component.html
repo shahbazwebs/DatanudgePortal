@@ -69,7 +69,7 @@
                     <ul>
                         <li>
                             <div class="search_box_section">
-                                <input type="text" placeholder="Search Patient" class="form-control">
+                                <input type="text" placeholder="Search records" class="form-control">
                                 <button><i class="fa fa-search"></i></button>
                             </div>
                         </li>
@@ -221,6 +221,62 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="timeline-section">
+                    <div class="row">
+                        <div class="col-md-10">
+                            <div class="box_heading labs_background"><i class="fa fa-flask" aria-hidden="true"></i> {{patients.Labs}} </div>
+                            <div class="report_body">
+                                <div class="report_heading">
+                                    <h2>{{patients.Labs}}</h2>
+                                    <span><i class="fa fa-map-marker" aria-hidden="true"></i> {{patients.LbasName}}</span>
+                                </div>
+
+                                <div class="report_body_contents">
+                                    <h3>{{patients.LabsInformationsHeading}}</h3>
+                                    <p>{{patients.LabsInformations}}</p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-section">
+                    <div class="row">
+                        <div class="col-md-10">
+                            <div class="box_heading procedure_background"><i class="fa fa-bed" aria-hidden="true"></i> {{patients.procedure}}</div>
+                            <div class="report_body">
+                                <div class="report_heading">
+                                    <h2>{{patients.procedureName}}</h2>
+                                    <span><i class="fa fa-map-marker" aria-hidden="true"></i> {{patients.testLocation}}</span>
+                                </div>
+
+                                <div class="report_body_contents">
+                                    <div class="body_sections">
+                                        <p>{{patients.QRSTestName}}</p>
+                                        <!-- <p>{{patients.TreatmentNotes}}</p> -->
+                                        <p>{{patients.Normal}}</p>
+                                    </div>
+
+                                    <div class="body_sections">
+                                        <p>{{patients.OverallAssessmentOfECG}}</p>
+                                        <!-- <p>{{patients.TreatmentNotes}}</p> -->
+                                        <p>{{patients.OverallAssessmentOfECGResult}}</p>
+                                    </div>
+
+                                    <div class="body_sections">
+                                        <h3>{{patients.Diagnosis}}</h3>
+                                        <p>{{patients.DiagnosisResult}}</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
         </div>
     </div>
