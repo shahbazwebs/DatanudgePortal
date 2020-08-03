@@ -2,7 +2,7 @@
     <div class="login_form_section">
         <div class="left_side_form">
             <div class="logo_section">
-                <span>LOGO</span>
+                <span><img src="../../../assets/images/logo.png" alt=""></span>
             </div>
             <form [formGroup]="loginforms" novalidate>
                 <div class="form-group" [ngClass]=" loginforms.get( 'userEmail' ).hasError( 'required' ) && loginforms.get( 'userEmail' ).touched || loginforms.get( 'userEmail' ).hasError( 'pattern' )  ? 'OuterErrorBox' : '' ">

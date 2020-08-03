@@ -141,6 +141,9 @@
                     {{ patients.monthYear}}
                     <!-- <span>3 Entries</span> -->
                 </div>
+                <div class="timeline-date clinic_visit_date">
+                    {{ patients.clinicvisitDate }}
+                </div>
                 <div class="timeline-section">
                     <div class="row">
                         <div class="col-md-10">
@@ -185,9 +188,9 @@
                 </div>
 
                 <div class="timeline-section">
-                    <!-- <div class="timeline-date">
-                        Visited Date {{ patients.visitDate }}
-                    </div> -->
+                    <div class="timeline-date">
+                        {{ patients.mirVisitDate }}
+                    </div>
                     <div class="row">
                         <div class="col-md-10">
                             <div class="box_heading"><i class="fa fa-picture-o" aria-hidden="true"></i> IMAGING</div>
@@ -223,6 +226,9 @@
                 </div>
 
                 <div class="timeline-section">
+                    <div class="timeline-date">
+                        {{ patients.labVisitDate }}
+                    </div>
                     <div class="row">
                         <div class="col-md-10">
                             <div class="box_heading labs_background"><i class="fa fa-flask" aria-hidden="true"></i> {{patients.Labs}} </div>
@@ -243,6 +249,9 @@
                 </div>
 
                 <div class="timeline-section">
+                    <div class="timeline-date">
+                        {{ patients.ecgVisitDate }}
+                    </div>
                     <div class="row">
                         <div class="col-md-10">
                             <div class="box_heading procedure_background"><i class="fa fa-bed" aria-hidden="true"></i> {{patients.procedure}}</div>

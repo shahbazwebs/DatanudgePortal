@@ -92,6 +92,12 @@ Login page Style
             }
             .logo_section {
                 padding: 0px 0 0 30px;
+                span {
+                    img {
+                        width: 100%;
+                        max-width: 220px;
+                    }
+                }
                 @media (max-width: 767px) {
                     display: none;
                 }
@@ -297,6 +303,11 @@ Login page Style
                 font-size: 22px;
                 text-transform: uppercase;
                 cursor: pointer;
+                padding: 10px 0;
+                img {
+                    width: 100%;
+                    max-width: 220px;
+                }
             }
         }
         .header_right_section {
@@ -741,6 +752,31 @@ New Time line style
         left: 11px;
         border: 1px solid #f1f1f1;
         border-radius: 100%;
+    }
+    .clinic_visit_date {
+        margin-left: 35px;
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            width: 19px;
+            height: 1px;
+            background-color: #f1f1f1;
+            top: 12px;
+            left: -20px;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #f1f1f1;
+            // background: linear-gradient(to bottom, rgba(138, 145, 150, 1) 0%, rgba(122, 130, 136, 1) 60%, rgba(112, 120, 125, 1) 100%);
+            top: 7px;
+            left: -24px;
+            border: 1px solid #f1f1f1;
+            border-radius: 100%;
+        }
     }
     .timeline-section .col-sm-4 {
         margin-bottom: 15px;
