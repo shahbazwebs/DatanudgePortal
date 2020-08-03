@@ -141,11 +141,13 @@
                     {{ patients.monthYear}}
                     <!-- <span>3 Entries</span> -->
                 </div>
-                <div class="timeline-date clinic_visit_date">
-                    {{ patients.clinicvisitDate }}
-                </div>
                 <div class="timeline-section">
                     <div class="row">
+                        <div class="col-md-2">
+                            <div class="timeline-date clinic_visit_date">
+                                {{ patients.clinicvisitDate }}
+                            </div>
+                        </div>
                         <div class="col-md-10">
                             <div class="box_heading cliic_visit_background"><i class="fa fa-plus" aria-hidden="true"></i> Clinic Visit</div>
                             <div class="report_body">
@@ -188,10 +190,12 @@
                 </div>
 
                 <div class="timeline-section">
-                    <div class="timeline-date">
-                        {{ patients.mirVisitDate }}
-                    </div>
                     <div class="row">
+                        <div class="col-md-2">
+                            <div class="timeline-date clinic_visit_date">
+                                {{ patients.mirVisitDate }}
+                            </div>
+                        </div>
                         <div class="col-md-10">
                             <div class="box_heading"><i class="fa fa-picture-o" aria-hidden="true"></i> IMAGING</div>
                             <div class="report_body">
@@ -226,10 +230,13 @@
                 </div>
 
                 <div class="timeline-section">
-                    <div class="timeline-date">
-                        {{ patients.labVisitDate }}
-                    </div>
+                    <!--  -->
                     <div class="row">
+                        <div class="col-md-2">
+                            <div class="timeline-date clinic_visit_date lab_visit_date">
+                                {{ patients.labVisitDate }}
+                            </div>
+                        </div>
                         <div class="col-md-10">
                             <div class="box_heading labs_background"><i class="fa fa-flask" aria-hidden="true"></i> {{patients.Labs}} </div>
                             <div class="report_body">
@@ -249,10 +256,15 @@
                 </div>
 
                 <div class="timeline-section">
-                    <div class="timeline-date">
+                    <!-- <div class="timeline-date">
                         {{ patients.ecgVisitDate }}
-                    </div>
+                    </div> -->
                     <div class="row">
+                        <div class="col-md-2">
+                            <div class="timeline-date clinic_visit_date lab_visit_date">
+                                {{ patients.ecgVisitDate }}
+                            </div>
+                        </div>
                         <div class="col-md-10">
                             <div class="box_heading procedure_background"><i class="fa fa-bed" aria-hidden="true"></i> {{patients.procedure}}</div>
                             <div class="report_body">

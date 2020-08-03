@@ -665,23 +665,23 @@ New Time line style
         // background: -moz-linear-gradient(left, rgba(138, 145, 150, 1) 0%, rgba(122, 130, 136, 1) 60%, rgba(98, 105, 109, 1) 100%);
         // background: -webkit-linear-gradient(left, rgba(138, 145, 150, 1) 0%, rgba(122, 130, 136, 1) 60%, rgba(98, 105, 109, 1) 100%);
         // background: linear-gradient(to right, rgba(138, 145, 150, 1) 0%, rgba(122, 130, 136, 1) 60%, rgba(98, 105, 109, 1) 100%);
-        left: 14px;
+        left: 202px;
         top: 5px;
         border-radius: 4px;
     }
     .timeline-month {
         position: relative;
         padding: 0;
-        background-color: #f1f1f1;
+        background-color: #FFF;
         display: inline-block;
         width: auto;
         border-radius: 40px;
-        border: 1px solid #f1f1f1;
+        border: 8px solid #f1f1f1;
         border-right-color: #f1f1f1;
         margin-bottom: 30px;
-        width: 50px;
-        height: 50px;
-        margin: 0 0px 30px -8px;
+        width: 70px;
+        height: 70px;
+        margin: 0 0px 30px 169px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -723,14 +723,15 @@ New Time line style
     .timeline-date {
         margin-bottom: 15px;
         padding: 2px 15px;
-        background: $ThemeColor;
+        background: #adb5bf;
         position: relative;
         display: inline-block;
         border-radius: 20px;
-        border: 1px solid $ThemeColor;
+        border: 1px solid #adb5bf;
         color: #fff;
         text-shadow: $RegularShadow;
         font-size: 14px;
+        font-weight: 600;
     }
     .timeline-section:before {
         content: "";
@@ -740,6 +741,7 @@ New Time line style
         background-color: #f1f1f1;
         top: 16px;
         left: 20px;
+        display: none;
     }
     .timeline-section:after {
         content: "";
@@ -752,30 +754,38 @@ New Time line style
         left: 11px;
         border: 1px solid #f1f1f1;
         border-radius: 100%;
+        display: none;
     }
     .clinic_visit_date {
-        margin-left: 35px;
         position: relative;
         &::before {
             content: "";
             position: absolute;
-            width: 19px;
+            width: 39px;
             height: 1px;
             background-color: #f1f1f1;
             top: 12px;
-            left: -20px;
+            right: -40px;
         }
         &::after {
             content: "";
             position: absolute;
-            width: 10px;
-            height: 10px;
+            width: 15px;
+            height: 15px;
             background: #f1f1f1;
-            // background: linear-gradient(to bottom, rgba(138, 145, 150, 1) 0%, rgba(122, 130, 136, 1) 60%, rgba(112, 120, 125, 1) 100%);
-            top: 7px;
-            left: -24px;
+            top: 5px;
+            right: -47px;
             border: 1px solid #f1f1f1;
             border-radius: 100%;
+        }
+    }
+    .timeline-date.clinic_visit_date.lab_visit_date {
+        &::after {
+            right: -58px;
+        }
+        &::before {
+            width: 49px;
+            right: -49px;
         }
     }
     .timeline-section .col-sm-4 {
@@ -827,6 +837,28 @@ New Time line style
         font-weight: 600;
         font-size: 17px;
         text-transform: uppercase;
+        margin: 30px 0px 0 30px;
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            width: 44px;
+            height: 1px;
+            background-color: #f1f1f1;
+            top: 16px;
+            left: -44px;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background: #f1f1f1;
+            top: 8px;
+            left: -52px;
+            border: 1px solid #f1f1f1;
+            border-radius: 100%;
+        }
     }
     .box_heading.cliic_visit_background {
         background: #11b066;
@@ -836,6 +868,7 @@ New Time line style
         padding: 15px;
         border-radius: 0 5px 5px 5px;
         box-shadow: $RegularShadow;
+        margin: 0 0 0 29px;
         .report_heading {
             border-bottom: solid 1px #f1f1f1;
             margin: 0 0 10px 0;
